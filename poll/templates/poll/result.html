@@ -1,0 +1,16 @@
+{% load i18n poll_tags %}
+
+<div class="poll_style">
+    <h3 class="title">{{ poll.title }}</h3>
+    <div class="">
+        {% for i in items %}
+            <div class="poll-item">{{ i.value }}</div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{% percentage poll i %}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width:{% percentage poll i %}%;">
+                {% filter floatformat %}{% percentage poll i %}{% endfilter %}%
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+	<h4>{% trans "Total votes" %}: <b>{{ poll.get_vote_count }}</b></h4><br>
+</div>

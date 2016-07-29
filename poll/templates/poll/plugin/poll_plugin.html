@@ -1,0 +1,80 @@
+{% load i18n sekizai_tags %}
+
+
+{% block content %}
+<div id="poll_container_{{ pollid }}">
+	<h1>{% trans 'poll' %}</h1>
+    {% if already_voted %}
+    {% include 'poll/result.html' %}
+    {% else %}
+    <div class="poll_style">
+        <form method="get" action="." id="poll_form">
+            <h2>{{ poll.title }}</h2>
+            <div id="poll_error_{{ pollid }}" class="poll_error alert alert-danger">{% trans "Please, select an answer" %}</div>
+            <ul class="list-unstyled">
+                {% for i in poll.items.all %}
+                <li><input type="radio" name="item" id="item_{{ i.id }}" value="{{ i.id }}" />
+                    <label for="item_{{ i.id }}">{{ i.value }}</label></li>
+                {% endfor %}
+            </ul>
+            <p class="poll_send"><input type="button" class="btn btn-default" id="poll_send" value="{% trans "Vote" %}" /></p>
+        </form>
+    </div>
+    {% endif %}
+</div>
+
+{% addtoblock 'css' %}
+<style>
+#poll_container h2, #poll_container h3 {
+	background-color: transparent !important;
+}
+#poll_container h3 {
+	margin: 0 0 0.5em 0 !important;
+}
+.poll_error {display: none;}
+.poll_style h4{
+	margin-top: 1.2em;
+}
+.progress {
+	margin-bottom: 2px !important;
+	height: 20px !important;
+	border-radius: 4px !important;
+}
+.progress-bar {
+	padding: 0 0 0 11px !important;
+    text-align: left !important;
+}
+</style>
+{% endaddtoblock %}
+
+{% addtoblock 'js' %}
+<script type="text/javascript">
+    {% url 'poll_ajax_vote' poll.pk as vote_url %}
+    {% url 'poll_result' poll.pk as result_url %}
+	var vote_url = '{{ vote_url }}';
+	var result_url = '{{ result_url }}';
+	$(document).ready(function() {
+		function showResults() {
+			$.get(result_url, function(data) {
+				$("#poll_container_"+{{ pollid }}).html(data);
+			});
+		}
+		$("#poll_send").on("click touch", function() {
+			item = $('#poll_form input[name=item]:checked').val();
+			if (typeof item === "undefined") {
+                // TODO: thats not funny
+                var error_selector = '#poll_error_{{ pollid }}';
+                $(error_selector).show();
+                console.log
+                //alert("{% trans "Please, select an answer" %}");
+				return false;
+			}
+			$.get(vote_url, {item: item}, function() {
+				showResults();
+			});
+			return false;
+		});
+	});
+</script>
+{% endaddtoblock %}
+{% endblock %}

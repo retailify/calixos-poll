@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-29 11:14+0200\n"
+"PO-Revision-Date: 2016-07-29 11:21+0200\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Thomas Meitz <thomas.meitz@retailify.de>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.8\n"
+
+#: cms_plugins.py:9 models.py:97
+msgid "Polls"
+msgstr "Umfragen"
+
+#: cms_plugins.py:10
+msgid "Poll Plugin"
+msgstr "Umfrage Plugin"
+
+#: models.py:26
+msgid "question"
+msgstr "Frage"
+
+#: models.py:27
+msgid "date"
+msgstr "Datum"
+
+#: models.py:28
+msgid "is published"
+msgstr "Ist veröffentlicht"
+
+#: models.py:35 models.py:70 templates/poll/base.html:8
+#: templates/poll/plugin/poll_plugin.html:7
+msgid "poll"
+msgstr "Umfrage"
+
+#: models.py:36
+msgid "polls"
+msgstr "Umfragen"
+
+#: models.py:52
+msgid "value"
+msgstr "Wert"
+
+#: models.py:53
+msgid "position"
+msgstr "Position"
+
+#: models.py:56
+msgid "answer"
+msgstr "Antwort"
+
+#: models.py:57
+msgid "answers"
+msgstr "Antworten"
+
+#: models.py:71
+msgid "voted item"
+msgstr ""
+
+#: models.py:72
+msgid "user's IP"
+msgstr "Nutzer-IP"
+
+#: models.py:74
+msgid "user"
+msgstr "Nutzer"
+
+#: models.py:78
+msgid "vote"
+msgstr "Stimme"
+
+#: models.py:79
+msgid "votes"
+msgstr "Stimmen"
+
+#: models.py:96
+msgid "Poll"
+msgstr "Umfrage"
+
+#: templates/poll/plugin/poll_plugin.html:17 templates/poll/poll.html:41
+msgid "Vote"
+msgstr "Abstimmen"
+
+#: templates/poll/plugin/poll_plugin.html:44 templates/poll/poll.html:19
+msgid "Please, select an answer"
+msgstr "Bitte wählen Sie eine Antwort"
+
+#: templates/poll/result.html:22
+msgid "Total votes"
+msgstr "Insgesamt abgegebene Stimmen"
