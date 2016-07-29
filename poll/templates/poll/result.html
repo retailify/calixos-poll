@@ -1,7 +1,7 @@
 {% load i18n poll_tags %}
 
 <div class="poll_style">
-    <h3 class="title">{{ poll.title }}</h3>
+    <h3>{{ poll.title }}</h3>
     <div class="">
         {% for i in items %}
             <div class="poll-item">{{ i.value }}</div>

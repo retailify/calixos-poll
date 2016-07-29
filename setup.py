@@ -6,13 +6,13 @@ version = __import__('poll').get_version()
 print find_packages()
 
 setup(
-    name='django-simple-poll',
+    name='calixos-poll',
     version=version,
-    description='Django simple poll application',
-    author='Dmitry Akinin',
-    author_email='d.akinin@gmail.com',
-    url='https://github.com/applecat/django-simple-poll',
-    download_url='https://github.com/applecat/django-simple-poll/tarball/v0.1.3',
+    description='djangoCMS Poll',
+    author='Thomas Meitz',
+    author_email='calixos@web.de',
+    url='https://github.com/retailif/calixos-poll',
+    download_url='https://github.com/retailify/calixos-poll/tarball/v1.0.0',
     packages=find_packages(),
     classifiers=[
         'Development Status :: 4 - Beta',
