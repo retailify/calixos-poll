@@ -5,7 +5,7 @@ from poll.models import *
 class PollItemInline(admin.TabularInline):
     model = Item
     extra = 0
-    max_num = 15
+    max_num = 50
 
 class PollAdmin(admin.ModelAdmin):
     list_display = ('title', 'date', 'vote_count', 'is_published')
